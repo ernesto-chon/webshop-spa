@@ -6,8 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#C7AB62',
+        'primary': '#C7AB62',
         'primary-hover': '#AE9249',
+        'base-100': '#FFFFFF',
+        'base-200': '#EBEBEC',
+        'base-content': '#181818'
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
@@ -19,7 +22,7 @@ export default {
       },
     },
   },
-  
+
   plugins: [daisyui],
   daisyui: {
     styled: false,

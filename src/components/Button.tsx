@@ -5,5 +5,9 @@ type Props = {
 };
 
 export default function Button({ children }: Props) {
-  return <button className="btn rounded-sm bg-primary text-base hover:bg-primary-hover">{children}</button>;
+  return (
+    <button className="btn rounded-sm bg-primary text-base transition-colors !duration-300 hover:bg-primary-hover">
+      {children}
+    </button>
+  );
 }
