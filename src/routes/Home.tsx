@@ -1,6 +1,7 @@
 import SignIn from "../components/Authentication/SignIn";
 import SignUp from "../components/Authentication/SignUp";
 import AuthDetails from "../components/Authentication/AuthDetails";
+import Button from '../components/Button';
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
       <SignIn/>
       <SignUp/>
       <AuthDetails/>
+
+      <Button>Hello button</Button>
     </>
   );
 }
