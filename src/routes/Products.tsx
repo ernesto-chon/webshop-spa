@@ -1,7 +1,7 @@
 export default function Products() {
   return (
     <>
-      <h1 className="text-3xl md:text-4xl lg:text-6xl">products</h1>;
+      <h1 className="text-3xl md:text-4xl lg:text-6xl">products</h1>
       
       <h1 className="font-extrabold">Typography</h1>
 
@@ -21,8 +21,10 @@ export default function Products() {
       </div>
 
       <div className="mt-2 rounded border p-2">
-        <h6 className="font-bold">Jost Bold</h6>
-        <h6 className="font-extrabold">Jost Bolder</h6>
+        <div className="font-jost">Jost</div>
+        <div className="font-bold font-jost">Jost Bold</div>
+        <div className="font-extrabold font-jost">Jost Bolder</div>
+        <div>Roboto</div>
         <div className="font-bold">Roboto Bold</div>
         <div className="font-extrabold">Roboto Bolder</div>
       </div>
