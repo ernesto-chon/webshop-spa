@@ -10,7 +10,7 @@ export default {
         'primary-hover': '#AE9249',
         'base-100': '#FFFFFF',
         'base-200': '#EBEBEC',
-        'base-content': '#181818'
+        'base-content': '#181818',
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
@@ -26,5 +26,6 @@ export default {
   plugins: [daisyui],
   daisyui: {
     styled: false,
+    prefix: 'd-',
   },
 } satisfies Config;
