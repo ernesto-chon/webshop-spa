@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-roboto;
+  }
+
+  body {
+    @apply bg-base-100 text-base-content;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-jost;
+  }
+
+  h1 {
+    @apply text-[48px];
+  }
+
+  h2 {
+    @apply text-[32px];
+  }
+
+  h3 {
+    @apply text-[24px];
+  }
+
+  h4 {
+    @apply text-[20px];
+  }
+
+  h5 {
+    @apply text-[18px];
+  }
+
+  h6 {
+    @apply text-[16px];
+  }
+
+  p {
+    @apply leading-[1.7];
+  }
+
+  a {
+    @apply transition-colors !duration-300 hover:text-primary;
+  }
+}
