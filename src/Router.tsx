@@ -7,6 +7,7 @@ import Home from './routes/Home.tsx';
 import Products from './routes/Products.tsx';
 import WhoWeAre from './routes/WhoWeAre.tsx';
 import SomethingTerrible from './routes/SomethingTerrible.tsx';
+import Showcase from './routes/Showcase.tsx';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -31,6 +32,10 @@ export default function Router() {
           path: '/a-terrible-place-to-be',
           element: <SomethingTerrible />,
         },
+        {
+          path: '/showcase',
+          element: <Showcase />
+        }
       ],
     },
   ]);

@@ -1,7 +1,7 @@
 import SignIn from "../components/Authentication/SignIn";
 import SignUp from "../components/Authentication/SignUp";
 import AuthDetails from "../components/Authentication/AuthDetails";
-import Button from '../components/Button';
+import Button from '../components/atoms/Button';
 
 export default function Home() {
   return (
