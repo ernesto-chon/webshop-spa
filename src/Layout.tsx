@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import { useMemo } from 'react';
+
+import Navbar from './components/organims/Navbar';
 
 export default function Layout() {
   const { pathname } = useLocation();
