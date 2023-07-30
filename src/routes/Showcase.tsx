@@ -1,4 +1,5 @@
 import Button from '../components/atoms/Button';
+import InputField from '../components/atoms/InputField';
 
 export default function Showcase() {
   return (
@@ -8,6 +9,11 @@ export default function Showcase() {
         <Button>Button</Button>
       </div>
 
+      <div>
+        <InputField label='First name' placeholder="Input" />
+      </div>
+
+      </div>
     </>
   );
 }
