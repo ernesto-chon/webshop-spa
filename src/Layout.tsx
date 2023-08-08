@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/organism/Navbar';
 import { useMemo } from 'react';
 
 export default function Layout() {
