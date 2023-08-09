@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth } from '../../firebase'
+import React, { useEffect, useState } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { shallow } from 'zustand/shallow';
+import { UserInterface, useAuthStore } from '../../store/authStore';
+import { auth } from '../../firebase';
 
 const AuthDetails: React.FC = () => {
-  const [authUser, setAuthUser] = useState<any | null>(null); // TODO: change any
+  const [ user, setUserDetails] = useAuthStore(
+    (state) => [state.user, state.setUserDetails],
+    shallow
+  )
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthUser(user)
+        const newUser: UserInterface = { email: user.email || '' , isLogged: true};
+        setUserDetails(newUser);
+        // setAuthUser(user);
       } else {
-        setAuthUser(null)
+        const newUser: UserInterface = { email: '', isLogged: false };
+        setUserDetails(newUser);
+        // setAuthUser(null);
       }
     })
 
@@ -31,7 +40,7 @@ const AuthDetails: React.FC = () => {
 
   return (
     <div className="my-10 text-center">
-      {authUser ? (
+      {user.isLogged ? (
         <>
           <p>Signed in</p>
           <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={userSignOut}>

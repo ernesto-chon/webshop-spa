@@ -1,14 +1,11 @@
 import SignIn from '../components/Authentication/SignIn';
 import SignUp from '../components/Authentication/SignUp';
 import AuthDetails from '../components/Authentication/AuthDetails';
-import useAuthStore from '../store/authStore'
+import {useAuthStore} from '../store/authStore'
 import Button from '../components/atoms/Button';
 
 export default function Home() {
-  const [user, getUserDetails] = useAuthStore(
-    (state) => [state.user, state.getUserDetails],
-    // shallow
-  )
+  const user = useAuthStore(state => state.user);
 
   return (
     <>
@@ -18,7 +15,6 @@ export default function Home() {
       <AuthDetails />
       <Button>Hello button</Button>
       <h3>User email: {user.email}</h3>
-      <button className="d-btn rounded-sm  bg-primary" onClick={() => getUserDetails()}>Get User Details</button>
     </>
   );
 }
