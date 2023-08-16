@@ -9,44 +9,46 @@ const SignIn: React.FC = () => {
 
   const { register, handleSubmit } = useForm();
 
-  const signIn = (data: any) => { //TODO: change any
-    const newUser = {email: data.userEmail, password: data.userPassword};
+  const signIn = (data: any) => {
+    //TODO: change any
+    // e.preventDefault();
+    const newUser = { email: data.userEmail, password: data.userPassword };
     signInWithEmailAndPassword(auth, newUser.email, newUser.password)
       .then((userCredentials) => {
-        console.log(userCredentials)
+        console.log(userCredentials);
       })
       .catch((error) => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   };
   return (
-    <div className="mt-5">
+    <div>
+      <h2>Login to your account</h2>
       <form
-        className="grid grid-cols-1 gap-2"
+        className="mt-2 grid grid-cols-1 gap-2 rounded border p-5"
         onSubmit={handleSubmit((data) => {
           signIn(data);
         })}
       >
-        <h1>Login to your account</h1>
         <input
-          className="text-[#000]"
+          className="m-1 rounded border p-1 text-[#000]"
           type="email"
           placeholder="Enter your email"
           // value={email}
           // onChange={(e) => setEmail(e.target.value)}
           {...register('userEmail')}
-        ></input>
+        />
         <input
-          className="text-[#000]"
+          className="m-1 rounded border p-1 text-[#000]"
           type="password"
           placeholder="Enter your password"
           // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           {...register('userPassword')}
-        ></input>
+        />
         <button
           type="submit"
-          className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
+          className="w-30 place-self-center rounded border border-blue-500 bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-transparent"
         >
           Login
         </button>
