@@ -1,48 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth } from '../../firebase'
+import React, { useEffect } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { shallow } from 'zustand/shallow';
+import { UserInterface, useAuthStore } from '../../store/authStore';
+import { auth } from '../../firebase';
 
 const AuthDetails: React.FC = () => {
-  const [authUser, setAuthUser] = useState<any | null>(null); // TODO: change any
+  console.log('Auth is running'); //FIX: Check how many times this component is rendered.
+  const [user, setUserDetails] = useAuthStore((state) => [state.user, state.setUserDetails], shallow);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthUser(user)
+        const newUser: UserInterface = { email: user.email || '', isLogged: true };
+        setUserDetails(newUser);
       } else {
-        setAuthUser(null)
+        const newUser: UserInterface = { email: '', isLogged: false };
+        setUserDetails(newUser);
       }
-    })
+    });
 
+    //this return listens one more time for any changes on the auth object from firebase
     return () => {
-      listen()
-    }
-  }, [])
+      listen();
+    };
+  }, []);
 
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log('Signed out successfully')
+        console.log('Signed out successfully');
       })
       .catch((error) => {
-        console.log(error)
-      })
-  }
+        console.log(error);
+      });
+  };
 
   return (
-    <div className="my-10 text-center">
-      {authUser ? (
+    <div className="grid grid-cols-1 gap-2">
+      {user.isLogged ? (
         <>
-          <p>Signed in</p>
-          <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={userSignOut}>
+          <h2>Welcome: {user.email}</h2>
+          <button
+            className="mt-3 place-self-center w-30 rounded border border-blue-500 bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-transparent"
+            onClick={userSignOut}
+          >
             Sign out
           </button>
         </>
       ) : (
-        <p>Signed out</p>
+        <h3>Please sign in with your account or create one</h3>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default AuthDetails
+export default AuthDetails;
