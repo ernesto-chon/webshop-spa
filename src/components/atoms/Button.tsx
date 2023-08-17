@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-type Props = {
-  children: ReactNode;
-};
+type Props = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({ children }: Props) {
+export default function Button({ children, ...props }: Props) {
   return (
-    <button className="d-btn rounded-sm  bg-primary text-base transition-colors !duration-300 hover:bg-primary-hover">
+    <button
+      className="d-btn rounded-sm bg-primary text-base text-white transition-colors !duration-300 hover:bg-primary-hover"
+      {...props}
+    >
       {children}
     </button>
   );
