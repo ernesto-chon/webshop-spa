@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Layout from './Layout.tsx';
+
 // routes
-import Error from './routes/Error.tsx';
+import ErrorPage from './routes/ErrorPage.tsx';
 import Home from './routes/Home.tsx';
 import Products from './routes/Products.tsx';
 import WhoWeAre from './routes/WhoWeAre.tsx';
@@ -14,7 +15,7 @@ export default function Router() {
     {
       path: '/',
       element: <Layout />,
-      errorElement: <Error />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,

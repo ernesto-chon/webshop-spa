@@ -1,13 +1,15 @@
 import React from 'react';
-import { auth } from '../../firebase';
+
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+
+import { auth } from '@/firebase';
 
 const SignUp: React.FC = () => {
   const { register, handleSubmit } = useForm();
 
   const signUp = (data: any) => {
-    const newUser = {email: data.userEmail, password: data.userPassword};
+    const newUser = { email: data.userEmail, password: data.userPassword };
     createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
       .then((userCredentials) => {
         console.log(userCredentials);
@@ -20,7 +22,7 @@ const SignUp: React.FC = () => {
     <div className="mt-5">
       <h2>Create Account</h2>
       <form
-        className="rounded border mt-2 p-5 grid grid-cols-1 gap-2"
+        className="mt-2 grid grid-cols-1 gap-2 rounded border p-5"
         onSubmit={handleSubmit((data) => {
           signUp(data);
         })}
@@ -39,7 +41,7 @@ const SignUp: React.FC = () => {
         ></input>
         <button
           type="submit"
-          className="place-self-center w-30 rounded border border-blue-500 bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-transparent"
+          className="w-30 place-self-center rounded border border-blue-500 bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-transparent"
         >
           Sign Up
         </button>
