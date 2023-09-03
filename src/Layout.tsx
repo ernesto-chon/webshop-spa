@@ -2,8 +2,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/organism/Navbar';
 import { useMemo } from 'react';
 
-import Navbar from './components/organims/Navbar';
-
 export default function Layout() {
   const { pathname } = useLocation();
 
@@ -23,7 +21,7 @@ export default function Layout() {
   }, [pathname]);
 
   return (
-    <div className={`grid place-items-center h-screen !bg-gradient-to-bl ${color} text-white`}>
+    <div className={`grid place-items-center min-h-screen !bg-gradient-to-bl ${color} text-white`}>
       <div className="space-y-2">
         <div className={`text-center p-16 mx-4 bg-gradient-to-tr ${color}`}>
           <Outlet />
