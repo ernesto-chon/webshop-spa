@@ -1,7 +1,8 @@
-import React, { useState, FormEvent } from 'react';
-import { auth } from '../../firebase';
+import React from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+
+import { auth } from '@/firebase';
 
 const SignIn: React.FC = () => {
   // const [email, setEmail] = useState('');

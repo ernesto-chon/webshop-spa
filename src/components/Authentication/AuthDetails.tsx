@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { shallow } from 'zustand/shallow';
-import { UserInterface, useAuthStore } from '../../store/authStore';
-import { auth } from '../../firebase';
+
+import { UserInterface, useAuthStore } from '@/store/authStore';
+import { auth } from '@/firebase';
+
 
 const AuthDetails: React.FC = () => {
-  console.log('Auth is running'); //FIX: Check how many times this component is rendered.
+  console.log('Auth is running'); // FIX: Check how many times this component is rendered.
   const [user, setUserDetails] = useAuthStore((state) => [state.user, state.setUserDetails], shallow);
 
   useEffect(() => {
