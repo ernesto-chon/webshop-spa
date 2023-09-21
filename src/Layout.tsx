@@ -23,7 +23,7 @@ export default function Layout() {
   }, [pathname]);
 
   return (
-    <div className={`grid h-screen place-items-center !bg-gradient-to-bl ${color} text-white`}>
+    <div className={`grid place-items-center min-h-screen !bg-gradient-to-bl ${color} text-white`}>
       <div className="space-y-2">
         <div className={`mx-4 bg-gradient-to-tr p-16 text-center ${color}`}>
           <Outlet />
