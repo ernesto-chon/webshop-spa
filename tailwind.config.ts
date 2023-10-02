@@ -11,6 +11,7 @@ export default {
         'base-100': '#FFFFFF',
         'base-200': '#EBEBEC',
         'base-content': '#181818',
+        'primary-gray': '#F8F8F8',
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],
