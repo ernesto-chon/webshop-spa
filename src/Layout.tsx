@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 // import { useMemo } from 'react';
 
 import Navbar from './components/organism/Navbar';
+import Hero from './components/molecules/Hero';
 
 export default function Layout() {
   // const { pathname } = useLocation();
@@ -23,9 +24,15 @@ export default function Layout() {
   // }, [pathname]);
 
   return (
-    <div className={`flex flex-col min-h-screen`}>
+    <div className={`flex min-h-screen flex-col`}>
       <Navbar />
-      <div className="space-y-2 flex-1">
+      <div className="flex-1 space-y-2">
+        <Hero
+          title="Get 30% off"
+          subtitle="Step into style with our curated collection of footwear that's designed to elevate your every step. We believe that the right pair of shoes can transform not just your outfit, but your entire day."
+          season='AUTUMN SALES'
+          imageSrc="https://themegrilldemos.com/webshop/wp-content/uploads/sites/165/2021/06/banner-1024x836.png"
+        />
         <div className={`mx-4 p-16 text-center`}>
           <Outlet />
         </div>
