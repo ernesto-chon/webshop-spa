@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import Navbar from './components/organism/Navbar';
 import Hero from './components/molecules/Hero';
+import Footer from './components/organism/Footer';
 
 export default function Layout() {
   // const { pathname } = useLocation();
@@ -26,7 +27,7 @@ export default function Layout() {
   return (
     <div className={`flex min-h-screen flex-col`}>
       <Navbar />
-      <div className="flex-1 space-y-2">
+      <div className="flex-1 space-y-2 bg-[#F8F8F8]">
         <Hero
           title="Get 30% off"
           subtitle="Step into style with our curated collection of footwear that's designed to elevate your every step. We believe that the right pair of shoes can transform not just your outfit, but your entire day."
@@ -37,6 +38,7 @@ export default function Layout() {
           <Outlet />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
