@@ -11,7 +11,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, season, imageSrc }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-5 bg-primary-gray py-10 px-[2rem] md:px-[5rem] lg:px-[10rem]">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-5 bg-[#ebebec] py-10 px-[2rem] md:px-[5rem] lg:px-[10rem]">
       <div className="basis-1/2 order-last md:order-first">
         <p className="hero-subtitle">{season}</p>
         <h1 className="hero-title my-5">{title}</h1>
