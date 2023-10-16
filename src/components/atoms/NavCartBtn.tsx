@@ -5,13 +5,14 @@ import ShoppingCartIcon from '@/assets/icons/cart.svg?react';
 export default function NavShoppingCart() {
   return (
     <div className="d-dropdown d-dropdown-end">
-      <label tabIndex={0} className="d-btn-ghost d-btn d-btn-circle">
+      <label tabIndex={0} className="d-btn-ghost d-btn d-btn-square hover:bg-secondary-gray">
         <div className="d-indicator">
           <ShoppingCartIcon height="24px" width="20px" className="mx-1" />
           <span className="d-badge d-indicator-item d-badge-sm h-5 w-5 rounded-full border-2 border-white bg-primary text-white">
             8
           </span>
         </div>
+        {/* <span className='hidden lg:block ml-[100px]'>$8.00</span> */}
       </label>
       <div tabIndex={0} className="d-card d-dropdown-content d-card-compact z-[1] mt-3 w-52 bg-base-100 shadow">
         <div className="d-card-body">

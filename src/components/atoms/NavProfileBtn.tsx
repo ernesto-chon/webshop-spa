@@ -6,7 +6,7 @@ import ProfileICon from '@/assets/icons/user.svg?react';
 export default function NavProfileBtn() {
   return (
     <div className="flex-none">
-      <button className="d-btn-ghost d-btn d-btn-square">
+      <button className="d-btn-ghost d-btn d-btn-square hover:bg-secondary-gray">
         <Link to="/my-account">
           <ProfileICon height="24px" width="20px" className="mx-1" />
         </Link>
