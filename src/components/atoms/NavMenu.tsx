@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function NavMenu(props) {
-  const [isOpen, setIsOpen] = useState(false);
+interface NavMenuProps {
+  onOpenMenu: (isOpen: boolean) => void;
+}
+
+export default function NavMenu(props: NavMenuProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const toggleIcon = () => {
     setIsOpen(!isOpen);
     props.onOpenMenu(isOpen);
   };
+
   return (
-    <div>
-      <div className="hidden space-x-4 md:flex lg:text-lg">
+    <div className="lg:w-full lg:max-w-[40rem] xl:max-w-[50rem]">
+      <div className="hidden space-x-4 md:flex lg:gap-5 lg:text-lg">
         <Link to="/">home</Link>
         <Link to="/products">products</Link>
         <Link to="/who-we-are">who-we-are</Link>
@@ -29,9 +34,9 @@ export default function NavMenu(props) {
             className="h-6 w-6"
           >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             )}
           </svg>
         </button>
