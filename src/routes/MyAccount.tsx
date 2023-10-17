@@ -8,7 +8,7 @@ export default function MyAccount() {
   const user = useAuthStore((state) => state.user);
 
   return (
-    <>
+    <div className="container mx-auto my-10 px-10">
       <AuthDetails />
       {!user.isLogged && (
         <>
@@ -16,6 +16,6 @@ export default function MyAccount() {
           <SignUp />
         </>
       )}
-    </>
+    </div>
   );
 }

@@ -28,17 +28,9 @@ export default function Layout() {
     <div className={`flex min-h-screen flex-col`}>
       <Navbar />
       <div className="flex-1 space-y-2 bg-primary-gray">
-        <Hero
-          title="Get 30% off"
-          subtitle="Step into style with our curated collection of footwear that's designed to elevate your every step. We believe that the right pair of shoes can transform not just your outfit, but your entire day."
-          season='AUTUMN SALES'
-          imageSrc="https://themegrilldemos.com/webshop/wp-content/uploads/sites/165/2021/06/banner-1024x836.png"
-        />
-        <div className={`mx-4 p-16 text-center`}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
