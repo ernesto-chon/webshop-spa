@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import navigationBarMenuItems from '@/assets/navigation-menu';
 
 interface NavMenuProps {
   onOpenMenu: (isOpen: boolean) => void;
@@ -16,17 +17,11 @@ export default function NavMenu(props: NavMenuProps) {
   return (
     <div className="lg:w-full lg:max-w-[40rem] xl:max-w-[50rem]">
       <div className="hidden space-x-4 md:flex lg:gap-5 lg:text-lg">
-        <NavLink to="/" className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
-          Home
-        </NavLink>
-        <NavLink to="/products" className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
-          Products
-        </NavLink>
-        <NavLink to="/who-we-are" className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
-          Team
-        </NavLink>
-        <NavLink to="/404">404</NavLink>
-        <NavLink to="/a-terrible-place-to-be">Something terrible</NavLink>
+        {navigationBarMenuItems.paths.map((item) => (
+          <NavLink to={item.path} className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
+            {item.title}
+          </NavLink>
+        ))}
       </div>
       <div className="flex items-center md:hidden">
         <button onClick={toggleIcon} className="text-black hover:text-primary focus:outline-none">
