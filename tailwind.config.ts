@@ -6,7 +6,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#C7AB62',
+        // 'primary': '#C7AB62',
+        //Vodafone looking
+        'primary': '#e60000',
         'primary-hover': '#AE9249',
         'base-100': '#FFFFFF',
         'base-200': '#EBEBEC',
