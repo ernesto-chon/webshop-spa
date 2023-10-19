@@ -9,9 +9,13 @@ import navigationBarMenuItems from '@/assets/navigation-menu';
 export default function NavBarDMB() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
-  const toggleMenu = (menuState: boolean) => {
-    setShowMenu(menuState);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  }
 
   return (
     <div className="bg-white py-5">
@@ -22,7 +26,7 @@ export default function NavBarDMB() {
           Browse Categories
         </button>
       </div>
-      <NavMenu onOpenMenu={toggleMenu} />
+      <NavMenu onOpenMenu={toggleMenu} openMenu={showMenu}/>
       <div className="hidden md:inline-flex">
         <Button>Shop now</Button>
       </div>
@@ -30,7 +34,7 @@ export default function NavBarDMB() {
     {showMenu && (
       <div className="m-5 flex flex-col gap-y-3 text-lg md:hidden">
         {navigationBarMenuItems.paths.map((item) => (
-          <NavLink to={item.path} className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
+          <NavLink to={item.path} onClick={closeMenu} className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
             {item.title}
           </NavLink>
         ))}

@@ -3,15 +3,13 @@ import { NavLink } from 'react-router-dom';
 import navigationBarMenuItems from '@/assets/navigation-menu';
 
 interface NavMenuProps {
-  onOpenMenu: (isOpen: boolean) => void;
+  onOpenMenu: () => void;
+  openMenu: boolean;
 }
 
 export default function NavMenu(props: NavMenuProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
-
   const toggleIcon = () => {
-    setIsOpen(!isOpen);
-    props.onOpenMenu(isOpen);
+    props.onOpenMenu();
   };
 
   return (
@@ -34,10 +32,10 @@ export default function NavMenu(props: NavMenuProps) {
             stroke="currentColor"
             className="h-6 w-6"
           >
-            {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-            ) : (
+            {props.openMenu ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
             )}
           </svg>
         </button>
