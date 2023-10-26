@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterListContent from '../atoms/FooterListContent';
 
 const Footer: React.FC = () => {
   return (
@@ -14,30 +15,18 @@ const Footer: React.FC = () => {
             ornare ut proin. Proin interdum enim id proin.
           </p>
         </div>
-        <div className="mb-4 w-full md:w-1/2 lg:mb-0 lg:w-1/4">
-          <h2 className="mb-2 border-l-4 border-primary pl-4 text-lg font-semibold">Useful Links</h2>
-          <div className="flex flex-col gap-2 px-5">
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-          </div>
-        </div>
-        <div className="mb-4 w-full md:w-1/2 lg:mb-0 lg:w-1/4">
-          <h2 className="mb-2 border-l-4 border-primary pl-4 text-lg font-semibold">Useful Links</h2>
-          <div className="flex flex-col gap-2 px-5">
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-          </div>
-        </div>
-        <div className="mb-4 w-full md:w-1/2 lg:mb-0 lg:w-1/4">
-          <h2 className="mb-2 border-l-4 border-primary pl-4 text-lg font-semibold">Useful Links</h2>
-          <div className="flex flex-col gap-2 px-5">
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-            <div className="my-3 border-b-2 border-primary-gray">Become a Franchise</div>
-          </div>
-        </div>
+        <FooterListContent
+          title="Useful Links"
+          contentArray={['Become a Franchise', 'Careers', 'Sell with us', 'Corporate Governance']}
+        />
+        <FooterListContent
+          title="Policy"
+          contentArray={['Privacy Policy', 'Track Order', 'Return Policy', 'Terms of use']}
+        />
+        <FooterListContent
+          title="Help"
+          contentArray={['Payments', 'Shipping', 'Return & Refund', 'FAQ']}
+        />
       </div>
     </footer>
   );

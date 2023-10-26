@@ -1,6 +1,9 @@
+import BreadcrumsContent from "@/components/atoms/BreadcrumsContent";
+
 export default function Products() {
   return (
     <div className="container mx-auto my-10 px-10">
+      <BreadcrumsContent/>
       <h1 className="text-3xl md:text-4xl lg:text-6xl">products</h1>
 
       <h1 className="font-extrabold">Typography</h1>

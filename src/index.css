@@ -49,6 +49,6 @@
   }
 
   a {
-    @apply transition-colors !duration-300 hover:text-primary;
+    @apply transition-colors !duration-300 hover:text-primary cursor-pointer;
   }
 }
