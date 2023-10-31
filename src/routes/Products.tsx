@@ -1,8 +1,11 @@
+import BreadcrumsContent from "@/components/atoms/BreadcrumsContent";
+
 export default function Products() {
   return (
-    <>
+    <div className="container mx-auto my-10 px-10">
+      <BreadcrumsContent/>
       <h1 className="text-3xl md:text-4xl lg:text-6xl">products</h1>
-      
+
       <h1 className="font-extrabold">Typography</h1>
 
       <div className="mt-2 rounded border p-2">Text in div</div>
@@ -22,12 +25,12 @@ export default function Products() {
 
       <div className="mt-2 rounded border p-2">
         <div className="font-jost">Jost</div>
-        <div className="font-bold font-jost">Jost Bold</div>
-        <div className="font-extrabold font-jost">Jost Bolder</div>
+        <div className="font-jost font-bold">Jost Bold</div>
+        <div className="font-jost font-extrabold">Jost Bolder</div>
         <div>Roboto</div>
         <div className="font-bold">Roboto Bold</div>
         <div className="font-extrabold">Roboto Bolder</div>
       </div>
-    </>
+    </div>
   );
 }
