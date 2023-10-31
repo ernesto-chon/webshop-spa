@@ -1,5 +1,7 @@
 import { useAuthStore } from '@/store/authStore';
 
+import BreadcrumsContent from '@/components/atoms/BreadcrumsContent';
+import ContentSection from '@/components/atoms/ContentSection';
 import AuthDetails from '@/components/Authentication/AuthDetails';
 import SignIn from '@/components/Authentication/SignIn';
 import SignUp from '@/components/Authentication/SignUp';
@@ -8,14 +10,17 @@ export default function MyAccount() {
   const user = useAuthStore((state) => state.user);
 
   return (
-    <div className="container mx-auto my-10 px-10">
-      <AuthDetails />
-      {!user.isLogged && (
-        <>
-          <SignIn />
-          <SignUp />
-        </>
-      )}
-    </div>
+    <>
+      <BreadcrumsContent />
+      <ContentSection>
+        <AuthDetails />
+        {!user.isLogged && (
+          <>
+            <SignIn />
+            <SignUp />
+          </>
+        )}
+      </ContentSection>
+    </>
   );
 }
