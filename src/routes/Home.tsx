@@ -1,5 +1,5 @@
 import Hero from '@/components/molecules/Hero';
-import Button from '@/components/atoms/Button';
+import NewArrivalsSection from '@/components/organism/NewArrivalsSection';
 
 export default function Home() {
   return (
@@ -12,12 +12,7 @@ export default function Home() {
         // Vodafone looking
         imageSrc="https://images.response.vodafone.com/EloquaImages/clients/VodafoneGroupPLC/%7B6979d5d7-719f-4378-a377-d46a9c40ac3b%7D_MicrosoftTeams-image_%282%29.png"
       />
-      <div className="container mx-auto my-20 flex flex-col justify-center px-10">
-        <h1 className="py-5 text-2xl md:text-4xl lg:text-6xl"> Welcome to the ernesto-chon project</h1>
-        <div className="button">
-          <Button>Hello button</Button>
-        </div>
-      </div>
+      <NewArrivalsSection/>
     </div>
   );
 }
