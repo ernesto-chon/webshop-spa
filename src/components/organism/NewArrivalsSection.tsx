@@ -1,22 +1,19 @@
 import React from 'react';
 import ContentSection from '../atoms/ContentSection';
 import ProductCard from '../atoms/ProductCard';
+import { useGetProducts } from '@/hooks/useGetProducts';
 
 export default function NewArrivalsSection() {
+  const { data, isLoading } = useGetProducts();
+  const products = data?.products;
+
   return (
     <ContentSection>
       <div className="my-10">
         <h1 className="text-2xl md:text-4xl"> New Arrivals </h1>
       </div>
-      <div className="grid grid-cols-1 justify-items-center gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:justify-items-start ">
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
-        <ProductCard imgSrc="https://i.dummyjson.com/data/products/1/1.jpg" title="iPhone 9" price="549" />
+      <div className="grid grid-cols-1 justify-items-center gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:justify-items-start 2xl:grid-cols-4 ">
+        {products && products.map((p) => <ProductCard imgSrc={p.images[0]} title={p.title} price={p.price} />)}
       </div>
     </ContentSection>
   );
