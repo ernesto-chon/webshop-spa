@@ -11,10 +11,14 @@ import '@fontsource/jost/700.css';
 import './index.css';
 
 import Router from './Router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Router />
+    <QueryClientProvider client={queryClient}>
+      <Router />
+    </QueryClientProvider>
   </React.StrictMode>
 );
