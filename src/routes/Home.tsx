@@ -1,5 +1,7 @@
 import Hero from '@/components/molecules/Hero';
 import NewArrivalsSection from '@/components/organism/NewArrivalsSection';
+import CategoriesSection from '@/components/organism/CategoriesSection';
+import BestSellersSection from '@/components/organism/BestSellersSection';
 
 export default function Home() {
   return (
@@ -12,7 +14,10 @@ export default function Home() {
         // Vodafone looking
         imageSrc="https://images.response.vodafone.com/EloquaImages/clients/VodafoneGroupPLC/%7B6979d5d7-719f-4378-a377-d46a9c40ac3b%7D_MicrosoftTeams-image_%282%29.png"
       />
+      <CategoriesSection/>
       <NewArrivalsSection/>
+      <CategoriesSection/>
+      <BestSellersSection/>
     </div>
   );
 }
