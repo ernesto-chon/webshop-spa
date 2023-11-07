@@ -28,3 +28,13 @@ export const useGetProducts = () => {
     },
   });
 };
+
+export const useGetProductById = (potsId: string| undefined) => {
+  return useQuery({
+    queryKey: ['product', potsId],
+    queryFn: async () => {
+      const { data } = await axios.get(`https://dummyjson.com/products/${potsId}`);
+      return data as Product;
+    },
+  });
+};
