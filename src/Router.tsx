@@ -6,6 +6,7 @@ import Layout from './Layout.tsx';
 import ErrorPage from './routes/ErrorPage.tsx';
 import Home from './routes/Home.tsx';
 import Products from './routes/Products.tsx';
+import ProductPage from './routes/ProductPage.tsx';
 import WhoWeAre from './routes/WhoWeAre.tsx';
 import SomethingTerrible from './routes/SomethingTerrible.tsx';
 import MyAccount from './routes/MyAccount.tsx';
@@ -25,6 +26,10 @@ export default function Router() {
         {
           path: '/products',
           element: <Products />,
+        },
+        {
+          path: '/products/:productId',
+          element: <ProductPage />,
         },
         {
           path: '/who-we-are',
