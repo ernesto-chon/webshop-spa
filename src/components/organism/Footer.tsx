@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterListContent from '../atoms/FooterListContent';
+import FooterList from '../atoms/FooterList';
 
 const Footer: React.FC = () => {
   return (
@@ -15,18 +15,12 @@ const Footer: React.FC = () => {
             ornare ut proin. Proin interdum enim id proin.
           </p>
         </div>
-        <FooterListContent
+        <FooterList
           title="Useful Links"
           contentArray={['Become a Franchise', 'Careers', 'Sell with us', 'Corporate Governance']}
         />
-        <FooterListContent
-          title="Policy"
-          contentArray={['Privacy Policy', 'Track Order', 'Return Policy', 'Terms of use']}
-        />
-        <FooterListContent
-          title="Help"
-          contentArray={['Payments', 'Shipping', 'Return & Refund', 'FAQ']}
-        />
+        <FooterList title="Policy" contentArray={['Privacy Policy', 'Track Order', 'Return Policy', 'Terms of use']} />
+        <FooterList title="Help" contentArray={['Payments', 'Shipping', 'Return & Refund', 'FAQ']} />
       </div>
     </footer>
   );

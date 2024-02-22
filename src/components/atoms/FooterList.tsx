@@ -1,11 +1,9 @@
-import React from 'react';
-
-interface FooterListContent {
+interface FooterList {
   title: string;
   contentArray: string[];
 }
 
-export default function FooterListContent(props: FooterListContent) {
+export default function FooterList(props: FooterList) {
   return (
     <div className="mb-4 w-full md:w-1/2 lg:mb-0 lg:w-1/4">
       <h2 className="mb-2 border-l-4 border-primary pl-4 text-lg font-semibold">{props.title}</h2>
