@@ -28,7 +28,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="hidden justify-center space-x-4 md:flex lg:w-full lg:max-w-[50rem] lg:gap-5 lg:text-xl">
+        <div className="hidden justify-center space-x-10 md:flex lg:w-full lg:max-w-[40rem] lg:gap-5 lg:text-xl">
           {navigationBarMenuItems.paths.map((item) => (
             <NavLink to={item.path} className={({ isActive }) => (isActive ? 'text-primary' : undefined)} end>
               {item.title}

@@ -10,25 +10,25 @@ interface NavigationBarMenu {
 const navigationBarMenuItems: NavigationBarMenu = {
   paths: [
     {
-      title: "Home",
-      path: "/",
+      title: 'Home',
+      path: '/',
     },
     {
-      title: "Products",
-      path: "/products",
+      title: 'Products',
+      path: '/products',
     },
     {
-      title: "Team",
-      path: "/who-we-are",
+      title: 'Team',
+      path: '/who-we-are',
     },
-    {
-      title: "404",
-      path: "/404",
-    },
-    {
-      title: "Something Terrible",
-      path: "/a-terrible-place-to-be",
-    },
+    // {
+    //   title: "404",
+    //   path: "/404",
+    // },
+    // {
+    //   title: "Something Terrible",
+    //   path: "/a-terrible-place-to-be",
+    // },
   ],
 };
 
