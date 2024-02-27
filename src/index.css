@@ -49,6 +49,12 @@
   }
 
   a {
-    @apply transition-colors !duration-300 hover:text-primary cursor-pointer;
+    @apply cursor-pointer transition-colors !duration-300 hover:text-primary;
+  }
+}
+
+@layer components {
+  .content-section {
+    @apply container mx-auto px-5 py-10;
   }
 }

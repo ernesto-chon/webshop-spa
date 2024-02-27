@@ -1,5 +1,4 @@
 import BreadcrumsContent from '@/components/atoms/BreadcrumsContent';
-import ContentSection from '@/components/atoms/ContentSection';
 import AllProductsSection from '@/components/organism/AllProductsSection';
 
 export default function Products() {
@@ -7,8 +6,6 @@ export default function Products() {
     <>
       <BreadcrumsContent />
       <AllProductsSection />
-      <ContentSection>
-      </ContentSection>
     </>
   );
 }
