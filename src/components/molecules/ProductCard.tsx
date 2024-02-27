@@ -1,16 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
-import Button from './Button';
+import Button from '../atoms/Button';
 
 type Props = {
-  id: number
+  id: number;
   imgSrc: string;
   title: string;
   price: number;
 };
 
 export default function ProductCard(props: Props) {
-
   const navigate = useNavigate();
   const options = {
     style: 'decimal',
@@ -20,7 +19,12 @@ export default function ProductCard(props: Props) {
   const price = props.price.toLocaleString('en-US', options);
 
   return (
-    <div className="d-card w-60 cursor-pointer bg-base-100 transition-transform !duration-300 hover:-translate-y-2 hover:shadow-xl xl:w-80" onClick={() => { navigate(`/products/${props.id}`)} }>
+    <div
+      className="d-card w-60 cursor-pointer bg-base-100 transition-transform !duration-300 hover:-translate-y-2 hover:shadow-xl xl:w-80"
+      onClick={() => {
+        navigate(`/products/${props.id}`);
+      }}
+    >
       <figure>
         <img src={props.imgSrc} alt="product" className="h-56 object-fill" />
       </figure>

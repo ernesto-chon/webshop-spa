@@ -1,8 +1,7 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 // import { useMemo } from 'react';
 
 import Navbar from './components/organism/Navbar';
-import Hero from './components/molecules/Hero';
 import Footer from './components/organism/Footer';
 
 export default function Layout() {
