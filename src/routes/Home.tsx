@@ -16,7 +16,6 @@ export default function Home() {
       />
       <CategoriesSection />
       <NewArrivalsSection />
-      <CategoriesSection />
       <BestSellersSection />
     </div>
   );
