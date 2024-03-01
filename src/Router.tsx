@@ -11,6 +11,7 @@ import WhoWeAre from './routes/WhoWeAre.tsx';
 import SomethingTerrible from './routes/SomethingTerrible.tsx';
 import MyAccount from './routes/MyAccount.tsx';
 import Showcase from './routes/Showcase.tsx';
+import ProductsByCategory from './routes/ProductsByCategory.tsx';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -32,6 +33,10 @@ export default function Router() {
           element: <ProductPage />,
         },
         {
+          path: '/:category',
+          element: <ProductsByCategory />,
+        },
+        {
           path: '/who-we-are',
           element: <WhoWeAre />,
         },
@@ -45,8 +50,8 @@ export default function Router() {
         },
         {
           path: '/showcase',
-          element: <Showcase />
-        }
+          element: <Showcase />,
+        },
       ],
     },
   ]);
