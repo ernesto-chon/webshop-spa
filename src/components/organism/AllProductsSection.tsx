@@ -1,6 +1,6 @@
 import LoadingBall from '../atoms/LoadingBall';
 import ProductCard from '../molecules/ProductCard';
-import { useGetProducts } from '@/hooks/useGetProducts';
+import { useGetProducts } from '@/hooks/useGetProducts.ts';
 
 export default function AllProductsSection() {
   const { data, isLoading } = useGetProducts();

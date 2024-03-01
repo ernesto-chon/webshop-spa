@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import BreadcrumsContent from '@/components/atoms/BreadcrumsContent';
-import { useGetProductById } from '@/hooks/useGetProducts';
+import { useGetProductById } from '@/hooks/useGetProducts.ts';
 
 export default function ProductPage() {
   const { productId } = useParams();

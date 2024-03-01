@@ -1,5 +1,5 @@
 import CategoryCard from '../molecules/CategoryCard';
-import { useGetCategories } from '@/hooks/useGetCategory';
+import { useGetCategories } from '@/hooks/useGetCategory.ts';
 
 export default function CategoriesSection() {
   const { data: allCategories } = useGetCategories();
