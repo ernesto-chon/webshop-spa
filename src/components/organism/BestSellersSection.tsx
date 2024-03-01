@@ -4,13 +4,11 @@ import { useGetProducts } from '@/hooks/useGetProducts';
 
 export default function BestSellersSection() {
   const { data, isLoading } = useGetProducts();
-  const products = data?.products.slice(8, 12);
+  const products = data?.products.slice(4, 8);
 
   return (
     <div className="content-section">
-      <div className="my-5">
-        <h1 className="text-2xl md:text-4xl">Best Sellers</h1>
-      </div>
+      <h2 className="my-5">Best Sellers</h2>
       <div className="grid grid-cols-1 justify-items-center gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:justify-items-start 2xl:grid-cols-4 ">
         {isLoading ? (
           <LoadingBall />

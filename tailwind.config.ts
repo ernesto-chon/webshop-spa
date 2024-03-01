@@ -6,15 +6,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 'primary': '#C7AB62',
-        //Vodafone looking
-        'primary': '#e60000',
+        'primary': '#C7AB62',
         'primary-hover': '#AE9249',
         'base-100': '#FFFFFF',
         'base-200': '#EBEBEC',
         'base-content': '#181818',
         'primary-gray': '#F8F8F8',
-        'secondary-gray': '#EBEBEC'
+        'secondary-gray': '#EBEBEC',
       },
       fontFamily: {
         jost: ['Jost', 'sans-serif'],

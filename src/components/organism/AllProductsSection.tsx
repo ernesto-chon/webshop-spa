@@ -11,7 +11,7 @@ export default function AllProductsSection() {
       <div className="mb-5">
         <h1 className="text-2xl md:text-4xl"> All Products </h1>
       </div>
-      <div className="grid grid-cols-1 justify-items-center gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:justify-items-start 2xl:grid-cols-4 ">
+      <div className="grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ">
         {isLoading ? (
           <LoadingBall />
         ) : (
