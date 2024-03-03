@@ -2,7 +2,9 @@ import React from 'react';
 
 import ShoppingCartIcon from '@/assets/icons/cart.svg?react';
 
-export default function NavShoppingCart() {
+// This component is not currently being used
+
+export default function NavCartBtn() {
   return (
     <div className="d-dropdown d-dropdown-end">
       <label tabIndex={0} className="d-btn-ghost d-btn d-btn-square hover:bg-secondary-gray">
