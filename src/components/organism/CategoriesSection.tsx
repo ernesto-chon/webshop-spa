@@ -12,7 +12,7 @@ export default function CategoriesSection() {
     );
   }
 
-  const shownCategories = allCategories.slice(0, 3);
+  const shownCategories = allCategories.slice(9, 12);
 
   return (
     <div className="content-section">
