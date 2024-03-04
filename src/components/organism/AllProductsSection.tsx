@@ -8,8 +8,8 @@ export default function AllProductsSection() {
 
   return (
     <div className="content-section">
-      <div className="mb-5">
-        <h1 className="text-2xl md:text-4xl"> All Products </h1>
+      <div className="mb-10 flex items-center justify-center">
+        <h4>Showing 1 - 20 of 100 items</h4>
       </div>
       <div className="grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ">
         {isLoading ? (
