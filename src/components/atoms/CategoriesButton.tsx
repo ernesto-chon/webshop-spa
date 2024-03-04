@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useGetCategories } from '@/hooks/useGetCategory.ts';
 import { Link } from 'react-router-dom';
+import GridIcon from '@/assets/icons/grid.svg?react';
+import { useGetCategories } from '@/hooks/useGetCategory.ts';
 
 export default function CategoriesButton() {
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -9,7 +10,7 @@ export default function CategoriesButton() {
   const { data: allCategories } = useGetCategories();
 
   return (
-    <div className="d-drawer z-20">
+    <div className="d-drawer z-10">
       <input
         id="my-drawer"
         type="checkbox"
@@ -22,6 +23,7 @@ export default function CategoriesButton() {
           htmlFor="my-drawer"
           className="d-btn rounded-sm bg-primary text-base text-white transition-colors !duration-300 hover:bg-primary-hover"
         >
+          <GridIcon height="24px" width="20px" className="mx-1 fill-white" />
           Categories
         </label>
       </div>
