@@ -10,15 +10,14 @@ export default function AllProductsSection() {
   // pagination
   const productsDisplayed = 24;
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setpostPerPage] = useState(productsDisplayed);
 
   if (!products) {
     return <div>No data found</div>;
   }
 
   // pagination
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const indexOfLastProduct = currentPage * productsDisplayed;
+  const indexOfFirstProduct = indexOfLastProduct - productsDisplayed;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
   const updatePage = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -42,6 +41,7 @@ export default function AllProductsSection() {
       <ProductsPagination
         totalProducts={products?.length}
         displayedProducts={productsDisplayed}
+        currentPage={currentPage}
         paginate={updatePage}
       />
     </div>

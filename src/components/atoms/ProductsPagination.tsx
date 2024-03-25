@@ -1,10 +1,11 @@
 interface IProps {
   totalProducts: number;
   displayedProducts: number;
+  currentPage: number;
   paginate(number: number): void;
 }
 
-export default function ProductsPagination({ totalProducts, displayedProducts, paginate }: IProps) {
+export default function ProductsPagination({ totalProducts, displayedProducts, currentPage, paginate }: IProps) {
   const paginationNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / displayedProducts); i++) {
@@ -19,7 +20,9 @@ export default function ProductsPagination({ totalProducts, displayedProducts, p
             paginate(pageNumber);
           }}
           key={pageNumber}
-          className="d-btn d-join-item bg-primary-gray"
+          className={`d-btn rounded-md ${
+            currentPage === pageNumber ? 'bg-primary-hover text-white' : 'bg-primary-gray'
+          }`}
         >
           {pageNumber}
         </button>
