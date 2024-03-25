@@ -1,10 +1,10 @@
-import BreadcrumsContent from '@/components/atoms/BreadcrumsContent';
+import BreadcrumbContent from '@/components/atoms/BreadcrumbsContent';
 import AllProductsSection from '@/components/organism/AllProductsSection';
 
 export default function Products() {
   return (
     <>
-      <BreadcrumsContent />
+      <BreadcrumbContent />
       <AllProductsSection />
     </>
   );

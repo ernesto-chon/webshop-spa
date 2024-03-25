@@ -1,6 +1,6 @@
 import ChevronIcon from '@/assets/icons/chevron-right.svg?react';
 
-export default function BreadcrumsContent() {
+export default function BreadcrumbsContent() {
   const currentPath = window.location.pathname.slice(1);
   const title = currentPath.charAt(0).toUpperCase() + currentPath.slice(1);
 
