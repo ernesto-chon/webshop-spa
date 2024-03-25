@@ -3,8 +3,8 @@ import FooterList from '../atoms/FooterList';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mx-5 my-10">
-      <div className="container mx-auto flex flex-wrap justify-between">
+    <footer className="bg-primary-gray">
+      <div className="content-section flex flex-wrap justify-between">
         <div className="mb-4 w-full px-5 md:w-1/2 lg:mb-0 lg:w-1/4">
           <img
             src="https://themegrilldemos.com/webshop/wp-content/uploads/sites/165/2021/08/webshop-logo.png"
