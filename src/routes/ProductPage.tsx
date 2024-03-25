@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-import BreadcrumbContent from '@/components/atoms/BreadcrumbsContent';
 import { useGetProductById } from '@/hooks/useGetProducts.ts';
 import ProductDescription from '@/components/organism/ProductDescription';
 import { Product } from '@/types/products';
+import BreadcrumbsSingleProduct from '@/components/atoms/BreadcrumbsSinlgeProduct';
 
 export default function ProductPage() {
   const { productId } = useParams();
@@ -15,7 +15,7 @@ export default function ProductPage() {
   }
   return (
     <>
-      <BreadcrumbContent />
+      <BreadcrumbsSingleProduct productCategory={product.category} productTitle={product.title} />
       <div className="content-section">
         <ProductDescription {...product} />
       </div>

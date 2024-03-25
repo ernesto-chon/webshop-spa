@@ -14,12 +14,12 @@ export default function BreadcrumbsContent() {
               <ChevronIcon height="18px" className="pl-2" />
             </li>
             <li className="px-2">
-              <a href={currentPath}>{currentPath}</a>
+              <a href={currentPath}>{title.replace('-', ' ')}</a>
             </li>
           </ul>
         </div>
         <div className="mt-5 text-left font-bold">
-          <h2>{title}</h2>
+          <h2>{title.replace('-', ' ')}</h2>
         </div>
       </div>
     </div>
