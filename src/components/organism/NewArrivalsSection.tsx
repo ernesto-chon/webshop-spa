@@ -3,7 +3,7 @@ import ProductCard from '../molecules/ProductCard';
 import { useGetProducts } from '@/hooks/useGetProducts.ts';
 
 export default function NewArrivalsSection() {
-  const { data, isLoading } = useGetProducts();
+  const { data, isLoading } = useGetProducts('20');
   const products = data?.products.slice(8, 16);
 
   return (

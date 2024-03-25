@@ -2,11 +2,11 @@ import { Products, Product } from '@/types/products';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-export const useGetProducts = () => {
+export const useGetProducts = (limit?: string | '0') => {
   return useQuery({
-    queryKey: ['products'],
+    queryKey: ['products', limit],
     queryFn: async () => {
-      const { data } = await axios.get('https://dummyjson.com/products');
+      const { data } = await axios.get(`https://dummyjson.com/products?limit=${limit}`);
       return data as Products;
     },
   });
