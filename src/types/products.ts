@@ -12,6 +12,9 @@ export interface Product {
   images: string[];
 }
 
-export interface Products {
+export interface ProductsApiResponse {
   products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
 }
