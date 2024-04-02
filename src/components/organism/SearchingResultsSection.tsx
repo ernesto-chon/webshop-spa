@@ -1,11 +1,15 @@
 import { useState } from 'react';
+import { shallow } from 'zustand/shallow';
+
 import LoadingBall from '../atoms/LoadingBall';
 import ProductCard from '../molecules/ProductCard';
 import ProductsPagination from '../atoms/ProductsPagination';
-import { useGetProducts } from '@/hooks/useGetProducts.ts';
+import { useSearchStore } from '@/store/searchStore';
+import { useSearchProducts } from '@/hooks/useGetProducts';
 
-export default function AllProductsSection() {
-  const { data, isLoading } = useGetProducts('0');
+export default function SearchingResultsSection() {
+  const [search] = useSearchStore((state) => [state.searchDetails, state.setSearchDetails], shallow);
+  const { data, isLoading } = useSearchProducts(search.input);
   const products = data?.products;
   // pagination
   const productsDisplayed = 24;
